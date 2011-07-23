@@ -3,7 +3,7 @@
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]
                  [org.mongodb/mongo-java-driver "2.1"]
-                 [inflections "0.4"]]
+                 [inflections "0.4.4"]]
   :dev-dependencies [[scriptjure "0.1.9"
                       :exclusions [org.clojure/clojure
                                    org.clojure/clojure-contrib]]

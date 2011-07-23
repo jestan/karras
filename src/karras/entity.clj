@@ -20,7 +20,7 @@ Example:
   (:use karras.sugar
         [clojure.contrib.def :only [defnk defalias defvar]]
         [clojure.contrib.str-utils2 :only [lower-case]]
-        inflections))
+        inflections.core))
 
 (defrecord EntitySpec
   [record-class
