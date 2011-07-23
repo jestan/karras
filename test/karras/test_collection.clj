@@ -15,7 +15,7 @@
                     {:first-name "Jane"  :last-name "Johnson" :age 16}])
 
 (doseq [p sample-people]
-  (eval `(declare ~(symbol (:first-name p)))))
+  (eval `(declare ^:dynamic ~(symbol (:first-name p)))))
 
 (defn person-by-name [n]
   (fetch-one people {:first-name n}))
