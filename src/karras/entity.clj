@@ -106,7 +106,7 @@ Example:
     (reduce make-field initial fields)))
 
 (defn- default-collection-name [classname]
-  (pluralize (lower-case (last (.split (str classname) "\\.")))))
+  (plural (lower-case (last (.split (str classname) "\\.")))))
 
 (defn- make-mongo-type [classname is-entity? fields type-fns]
   `(do
