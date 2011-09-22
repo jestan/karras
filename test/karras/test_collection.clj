@@ -15,7 +15,18 @@
                     {:first-name "Jane"  :last-name "Johnson" :age 16}])
 
 (doseq [p sample-people]
-  (eval `(declare ^:dynamic ~(symbol (:first-name p)))))
+  (let [sym ^{:dynamic true :declared true} (symbol (:first-name p))
+        v  (intern *ns*  sym)]
+    (alter-meta! v assoc :dynamic true)
+    (alter-meta! v assoc :declared true)
+    (println sym)
+    (println (meta sym))
+    (println v)
+    (println (meta v))
+    ))
+
+
+(println (meta Bill))
 
 (defn person-by-name [n]
   (fetch-one people {:first-name n}))
