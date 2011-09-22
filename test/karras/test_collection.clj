@@ -25,10 +25,10 @@
          (do
            (drop-collection people)
            (apply insert people sample-people)
-           (binding [Bill (person-by-name "Bill")
-                     Sally (person-by-name "Sally")
-                     Jim (person-by-name "Jim")
-                     Jane (person-by-name "Jane")]
+           (with-redefs [Bill (person-by-name "Bill")
+                         Sally (person-by-name "Sally")
+                         Jim (person-by-name "Jim")
+                         Jane (person-by-name "Jane")]
              (write-concern-strict (collection-db people))
              (in-request (collection-db people) ?form)))))
 
